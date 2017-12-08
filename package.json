@@ -1,9 +1,10 @@
 {
   "name": "pathstorage",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "test": "karma start pathStorage.conf.js"
+  "version": "0.0.1",
+  "description": "Use localStorage divide withpath",
+  "main": "pathStorage.conf.js",
+  "directories": {
+    "test": "tests"
   },
   "dependencies": {},
   "devDependencies": {
@@ -11,5 +12,24 @@
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.1"
-  }
+  },
+  "scripts": {
+    "test": "karma start pathStorage.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsol/pathStorage.git"
+  },
+  "keywords": [
+    "localStorage",
+    "Storage",
+    "path",
+    "cookie"
+  ],
+  "author": "HansolLim <dev.hansollim@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hsol/pathStorage/issues"
+  },
+  "homepage": "https://github.com/hsol/pathStorage#readme"
 }
