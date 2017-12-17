@@ -15,7 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'tests/spec/localStorage.spec.js'
+      'dist/src/pathStorage.js',
+      'tests/spec/localStorage.spec.js',
+      'tests/spec/pathStorage.spec.js',
     ],
 
 
