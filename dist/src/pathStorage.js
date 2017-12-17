@@ -90,6 +90,7 @@ var PathStorage = function () {
       }
 
       localStorage.setItem(this.localHashKey, JSON.stringify(this.workSpace));
+      this.length = Object.keys(this.workSpace).length;
     }
   }, {
     key: 'clear',
@@ -146,13 +147,6 @@ var PathStorage = function () {
       if (this.config.autoExecute) {
         this.execute();
       }
-    }
-  }, {
-    key: 'length',
-    get: function get() {
-      this.assertWorkSpace();
-
-      return Object.keys(this.workSpace).length;
     }
   }]);
 

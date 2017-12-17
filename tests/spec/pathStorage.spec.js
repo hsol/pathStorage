@@ -33,6 +33,16 @@ describe('pathStorage', function () {
     expect(pathStorage.key(0)).toBe(hash.toString());
   });
 
+  it('length', function () {
+    pathStorage = new PathStorage();
+
+    pathStorage.clear();
+
+    pathStorage.setItem(testKey, hash.toString());
+    pathStorage.setItem(testKey + '1', hash.toString());
+    expect(pathStorage.length).toBe(2);
+  });
+
   it('option:autoExecute', function () {
     pathStorage = new PathStorage({autoExecute: false});
     pathStorage.clear();

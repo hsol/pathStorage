@@ -47,12 +47,6 @@ class PathStorage {
     return pathKey;
   }
 
-  get length() {
-    this.assertWorkSpace();
-
-    return Object.keys(this.workSpace).length;
-  }
-
   detectPath() {
     this.path = window.location.pathname.split('/');
     this.hashPath = (window.location.hash.substr(1)).split('/');
@@ -84,6 +78,7 @@ class PathStorage {
     }
 
     localStorage.setItem(this.localHashKey, JSON.stringify(this.workSpace));
+    this.length = Object.keys(this.workSpace).length;
   }
 
   clear() {
