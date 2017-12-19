@@ -2,6 +2,10 @@
 This library can use localStorage with unique on path.
 You can apply this through npm(https://www.npmjs.com/package/pathstorage)
 
+## Example
+
+https://hsol.github.io/pathStorage
+
 ## Initialization
 `new PathStorage(object options)`
 Custom library options by object parameter
