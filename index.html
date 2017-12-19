@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta property="og:title" content="PathStorage">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hsol.github.io/pathstorage/">
+    <meta property="og:description" content="Use localStorage divide with path">
+    <meta property="og:image" content="https://s17.postimg.org/rzaidd7a7/book-2943383_1280.png">
+    <meta property="og:image:width" content="370">
+    <meta property="og:image:height" content="370">
+
+    <title>PathStorage</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400" rel="stylesheet" type="text/css">
+    <link href="sample/css/style.css" rel="stylesheet" type="text/css">
+    <script src="dist/src/pathStorage.js"></script>
+</head>
+<body>
+<header id="header"><a href="https://github.com/hsol/pathstorage">< back to GitHub</a></header>
+<section id="wrapper">
+    <header>
+        <h1>Path Storage</h1>
+    </header>
+    <article>
+        <div class="panel">
+            <h1>Introduction</h1>
+            <p>This library can use <strong>localStorage</strong> with unique on path.</p>
+            <p>You can apply this through npm(<a href="https://www.npmjs.com/package/pathstorage">https://www.npmjs.com/package/pathstorage</a>)
+            </p>
+        </div>
+        <div class="panel">
+            <h1>Workspace</h1>
+            <div class="panel-form">
+                <div class="panel-form-row">
+                    <label>
+                        <textarea name="workspace" placeholder="This is pathStorage's workspace." readonly></textarea>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="pull-right">
+                <button class="js_root">Go to root</button>
+                <button class="js_random_hash">Go to random hash path</button>
+            </div>
+            <h1>Example</h1>
+            <h3>PathStorage<i>.setItem(String, Mixed)</i></h3>
+            <div class="panel-form">
+                <div class="panel-form-row">
+                    <label>
+                        <strong>KEY:&nbsp;&nbsp;</strong>
+                        <input type="text" name="set_item_key">
+                    </label>
+                    <label>
+                        <strong>VALUE:&nbsp;&nbsp;</strong>
+                        <input type="text" name="set_item_value">
+                    </label>
+                    <button type="button" class="js_set_item">SET</button>
+                </div>
+            </div>
+            <h3>PathStorage<i>.getItem(String)</i></h3>
+            <div class="panel-form">
+                <div class="panel-form-row">
+                    <label>
+                        <strong>KEY:&nbsp;&nbsp;</strong>
+                        <input type="text" name="get_item_key">
+                    </label>
+                    <button type="button" class="js_get_item">GET</button>
+                </div>
+                <div class="panel-form-row">
+                    <textarea name="get_item_value" placeholder="getItem value" readonly></textarea>
+                </div>
+            </div>
+            <h3>PathStorage<i>.removeItem(String)</i></h3>
+            <div class="panel-form">
+                <div class="panel-form-row">
+                    <label>
+                        <strong>KEY:&nbsp;&nbsp;</strong>
+                        <input type="text" name="remove_item_key">
+                    </label>
+                    <button type="button" class="js_remove_item">REMOVE</button>
+                </div>
+            </div>
+            <h3>PathStorage<i>.clear()</i></h3>
+            <div class="panel-form">
+                <div class="panel-form-row">
+                    <button type="button" class="js_clear_item">CLEAR</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <h1>Initialization</h1>
+            <h3><em>new</em> PathStorage(<em>object options</em>)</h3>
+            <p>Custom library options by object parameter</p>
+            <br>
+            <h4>Example</h4>
+            <pre><code class="js">
+            var pathStorage = new PathStorage({
+                autoExecute: true, // default
+                useHashPath: false, // default
+                realTimePath: false // default
+            });
+            </code></pre>
+        </div>
+        <div class="panel">
+            <h1>Options
+            </h1>
+            <ul>
+                <li>
+                    <h3>Auto Execute<em>(default: true)</em></h3>
+                    <p>Auto execute values on localStorage when set, remove, clear item.</p>
+                </li>
+                <li>
+                    <h3>Use Hash Path<em>(default: false)</em></h3>
+                    <p>Use hash path on divide.</p>
+                </li>
+                <li>
+                    <h3>Real Time Path<em>(default: false)</em></h3>
+                    <p>Get path by real time.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="panel">
+            <h1>Methods<i>(like a <a href="https://developer.mozilla.org/ko/docs/Web/API/Storage">Storage</a> specs)</i>
+            </h1>
+            <ul>
+                <li>
+                    <h3><i>PathStorage</i>.key(<em>Int index</em>)</h3>
+                    <p>When passed a number n, this method will return the name of the nth key in the storage.</p>
+                    <br>
+                    <h4>Example</h4>
+                    <pre><code class="js">
+                        var firstValue = pathStorage.key(0);
+                    </code></pre>
+                </li>
+                <li>
+                    <h3><i>PathStorage</i>.getItem(<em>String key</em>)</h3>
+                    <p>When passed a key name, will return that key's value.</p>
+                    <br>
+                    <h4>Example</h4>
+                    <pre><code class="js">
+                        var options = pathStorage.getItem('say');
+                    </code></pre>
+                </li>
+                <li>
+                    <h3><i>PathStorage</i>.setItem(<em>string functionName</em>)</h3>
+                    <p>When passed a key name and value, will add that key to the storage, or update that key's value if it already exists.</p>
+                    <br>
+                    <h4>Example</h4>
+                    <pre><code class="js">
+                        pathStorage.setItem('say', {hello: 'world'});
+                    </code></pre>
+                </li>
+                <li>
+                    <h3><i>PathStorage</i>.removeItem(<em>string actionType</em>,<em>function callable</em>)</h3>
+                    <p>When passed a key name, will remove that key from the storage.</p>
+                    <br>
+                    <h4>Example</h4>
+                    <pre><code class="js">
+                        pathStorage.removeItem('say');
+                    </code></pre>
+                </li>
+                <li>
+                    <h3><i>PathStorage</i>.clear(<em>string attrName</em>)</h3>
+                    <p>When invoked, will empty all keys out of the storage.</i></p>
+                    <br>
+                    <h4>Example</h4>
+                    <pre><code class="js">
+                        pathStorage.clear();
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+    </article>
+</section>
+<footer id="footer">
+    <h2>Copyright 2017. <a href="https://github.com/hsol">HansolLim</a> all rights reserved.</h2>
+</footer>
+<script>
+  var pathStorage = new PathStorage({realTimePath: true, useHashPath: true});
+  var workSpace = document.querySelector('[name=workspace]');
+  var setItemBtn = document.querySelector('.js_set_item');
+  var getItemBtn = document.querySelector('.js_get_item');
+  var removeItemBtn = document.querySelector('.js_remove_item');
+  var clearBtn = document.querySelector('.js_clear_item');
+  var goRootBtn = document.querySelector('.js_root');
+  var goRandomHashBtn = document.querySelector('.js_random_hash');
+  workSpace.value = JSON.stringify(pathStorage.workSpace);
+
+  hljs.initHighlightingOnLoad();
+
+  setItemBtn.addEventListener('click', function () {
+    var setItemKey = document.querySelector('[name=set_item_key]');
+    var setItemValue = document.querySelector('[name=set_item_value]');
+
+    pathStorage.setItem(setItemKey.value, setItemValue.value);
+
+    workSpace.value = JSON.stringify(pathStorage.workSpace);
+    setItemKey.value = '';
+    setItemValue.value = '';
+  });
+
+  getItemBtn.addEventListener('click', function () {
+    var getItemValueTextArea = document.querySelector('textarea[name=get_item_value]');
+    var getItemKey = document.querySelector('[name=get_item_key]').value;
+
+    getItemValueTextArea.value = JSON.stringify(pathStorage.getItem(getItemKey));
+  });
+
+  removeItemBtn.addEventListener('click', function () {
+    var removeItemKey = document.querySelector('[name=remove_item_key]').value;
+
+    pathStorage.removeItem(removeItemKey);
+
+    workSpace.value = JSON.stringify(pathStorage.workSpace);
+  });
+
+  clearBtn.addEventListener('click', function () {
+    pathStorage.clear();
+
+    workSpace.value = JSON.stringify(pathStorage.workSpace);
+  });
+
+  goRootBtn.addEventListener('click', function () {
+    location.href = location.href.replace(location.hash, '');
+  });
+
+  goRandomHashBtn.addEventListener('click', function () {
+    var hashValue = Math.floor(Math.random() * 25) + 65;
+    location.href = '#' + String.fromCharCode(hashValue);
+
+    pathStorage.load();
+    workSpace.value = JSON.stringify(pathStorage.workSpace);
+  });
+
+  goRandomHashBtn.addEventListener('click', function () {
+    var hashValue = Math.floor(Math.random() * 25) + 65;
+    location.href = '#' + String.fromCharCode(hashValue);
+
+    pathStorage.load();
+    workSpace.value = JSON.stringify(pathStorage.workSpace);
+  });
+</script>
+</body>
+</html>

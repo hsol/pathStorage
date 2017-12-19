@@ -1,0 +1,203 @@
+header, section, article, footer {
+    display: block;
+}
+
+* {
+    font-size: inherit;
+    color: inherit;
+    font-family: 'Titillium Web', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.pull-right {
+    float: right;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: url("../img/background.png");
+    text-align: center;
+    font-size: 15px;
+}
+
+button {
+    padding: 0 1em;
+}
+
+header#header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: left;
+    padding: 0.5em 1em 0.5em 1em;
+
+    background-color: #0F0F0F;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+}
+
+header#header a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+section#wrapper {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-content: center;
+    align-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 5em 1em;
+}
+
+section#wrapper:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0F0F0F;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+section#wrapper > header {
+    width: 100%;
+    padding: 1em 0;
+}
+
+section#wrapper > header h1 {
+    font-size: 4em;
+    color: #FFF;
+}
+
+section#wrapper > article {
+    width: 100%;
+    margin: 0 auto;
+}
+
+section#wrapper > article > div.panel {
+    background-color: #FFF;
+    color: #000;
+    padding: 1em;
+    margin-bottom: 1em;
+    text-align: start;
+}
+
+section#wrapper > article > div.panel:last-child {
+    margin-bottom: 0;
+}
+
+section#wrapper > article > div.panel h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+section#wrapper > article > div.panel h2 {
+    font-size: 1.7em;
+}
+
+section#wrapper > article > div.panel h3 {
+    font-size: 1.4em;
+}
+
+section#wrapper > article > div.panel h4 {
+    font-size: 1.1em;
+}
+
+section#wrapper > article > div.panel p {
+    padding-left: 1em;
+}
+
+section#wrapper > article > div.panel i {
+    font-weight: 100;
+    opacity: 0.5;
+}
+
+section#wrapper > article > div.panel em {
+    font-size: 0.8em;
+    font-weight: 100;
+    opacity: 0.8;
+    text-decoration: none;
+    padding: 0 0.3em;
+}
+
+section#wrapper > article > div.panel ul li {
+    list-style: none;
+    padding-bottom: 3em;
+    overflow: hidden;
+}
+
+section#wrapper > article > div.panel ul li:last-child {
+    padding-bottom: 0;
+}
+
+section#wrapper > article > div.panel ul li pre {
+    margin-left: -5em;
+}
+
+section#wrapper > article > div.panel .panel-form {
+    background-color: #dedede;
+    color: #000;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.panel-form label > * {
+    vertical-align: top;
+}
+
+.panel-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    resize: vertical;
+}
+
+.panel-form .panel-form-row {
+    padding: 1em;
+}
+
+footer#footer {
+    padding: 1em;
+    color: #FFF;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 10pt;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    body {
+        font-size: 9pt;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    body {
+        font-size: 8pt;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    body {
+        font-size: 7pt;
+    }
+}

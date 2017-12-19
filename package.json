@@ -1,7 +1,7 @@
 {
   "name": "pathstorage",
   "version": "0.1.1",
-  "description": "Use localStorage divide withpath",
+  "description": "Use localStorage divide with path",
   "main": "pathStorage.conf.js",
   "directories": {
     "test": "tests"
