@@ -1,4 +1,4 @@
-# pathStorage
+# PathStorage
 This library can use localStorage with unique on path.
 You can apply this through npm(https://www.npmjs.com/package/pathstorage)
 
@@ -57,4 +57,4 @@ var pathStorage = new PathStorage({
 
 Copyright 2017 HansolLim <dev.hansollim@gmail.com>
 
-            
+MIT LICENSE
